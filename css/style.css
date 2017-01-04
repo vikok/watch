@@ -4,6 +4,7 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -867,15 +868,198 @@ img {
   }
 }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+
+.slick-track:before, .slick-track:after {
+  content: "";
+  display: table;
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none;
+}
+
+[dir="rtl"] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+.ba-slider__slide {
+  min-height: 100vh;
+  background: 50%;
+  background-size: cover;
+  outline: none;
+}
+
+.ba-slider__slide p {
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.ba-slider .slick-arrow {
+  position: absolute;
+  bottom: 100px;
+  left: 60px;
+  z-index: 2;
+  border: none;
+  font-size: 0;
+  background: no-repeat 50%;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  outline: none;
+}
+
+.ba-slider .slick-arrow:focus {
+  background-color: transparent;
+}
+
+.ba-slider .slick-arrow:active {
+  background-color: red;
+}
+
+.ba-slider .slick-prev {
+  background-image: url("../img/up.png");
+}
+
+.ba-slider .slick-next {
+  margin-left: 50px;
+  background-image: url("../img/down.png");
+}
+
+.ba-slider .slick-dots {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 418px;
+  right: 60px;
+  outline: none;
+  border: none;
+  list-style: none;
+}
+
+.ba-slider .slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 0;
+  margin: 4px 0;
+  border-radius: 50%;
+  background-color: #a0a9af;
+  display: block;
+}
+
+.ba-slider .slick-dots li button:focus {
+  background-color: #FFF;
+}
+
+.ba-slider .slick-dots li.slick-active button {
+  background: red;
+  height: 20px;
+}
+
+body {
+  font: 400 18px/1.3 "Open Sans", Arial, sans-serif;
+}
+
 /* Layout */
 .ba-container {
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 1200px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 /* Typography */
-a,
+a {
+  text-decoration: none;
+}
+
 input[type="submit"],
 input[type="button"],
 button {
@@ -897,6 +1081,139 @@ input[type="tel"],
 textarea,
 select {
   transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
+}
+
+.ba-header, .ba-footer {
+  position: fixed;
+  z-index: 3;
+}
+
+.ba-header {
+  padding-top: 40px;
+  top: 0;
+}
+
+.ba-logo {
+  fill: red;
+  float: left;
+}
+
+.ba-logo__svg {
+  fill: red;
+}
+
+.ba-cart {
+  background: url("../img/cart.png") 100% 0 no-repeat;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+  padding-right: 50px;
+}
+
+.ba-cart__nine {
+  display: inline-block;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 25px;
+  background: #ff0000;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ba-slide {
+  min-height: 100vh;
+  border: none;
+  outline: none;
+}
+
+.ba-watch {
+  height: 100vh;
+  background: 50% no-repeat;
+  background-size: contain;
+  padding: 150px 0;
+}
+
+.ba-watch__decription {
+  margin-top: 168px;
+  color: #a0a9af;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.ba-watch__title {
+  margin: 0;
+  color: #2f2d2d;
+  font-size: 28px;
+  font-weight: 700;
+  width: 195px;
+}
+
+.ba-watch__buy {
+  color: #ff0000;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ba-watch__price {
+  color: #ff0000;
+  font-size: 40px;
+  font-weight: 700;
+  display: block;
+}
+
+.ba-watch__gold {
+  background-color: #fdefbe;
+}
+
+.ba-watch__gray {
+  background-color: #fff;
+}
+
+.ba-watch__black {
+  background-color: #111;
+}
+
+.ba-watch__black .ba-swatch {
+  background: #FFF;
+}
+
+.ba-watch__black .ba-watch__title {
+  color: #FFF;
+}
+
+.ba-nav {
+  float: right;
+}
+
+.ba-menu {
+  color: #a0a9af;
+  font-size: 14px;
+  font-weight: 300;
+  list-style: none;
+}
+
+.ba-menu li {
+  float: left;
+  padding-left: 20px;
+}
+
+.ba-menu li a {
+  color: #A0A9AF;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.ba-menu li a:hover {
+  color: #ff0000;
+}
+
+.ba-footer {
+  bottom: 0;
+  padding-bottom: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */
